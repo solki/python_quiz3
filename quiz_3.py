@@ -1,7 +1,7 @@
 # Prompts the user for a word and outputs the list of
 # all subwords of the word of height 1.
 #
-# Written by *** for COMP9021
+# Written by Solki for COMP9021
 
 
 def extract_subwords(word):
