@@ -5,8 +5,31 @@
 
 
 def extract_subwords(word):
-    pass
-    # Replace pass above with your code
+    subwords = []
+    subword = ''
+    tmp = ''
+    word_space_wiped = word.replace(' ', '')
+    if word_space_wiped is '':
+        return subwords
+    for c in word_space_wiped:
+
+        if c is '(':
+            subword = tmp + '('
+            tmp = ''
+        elif c is ')':
+            if subword:
+                subword += tmp + ')'
+                subwords.append(subword)
+                subword = ''
+                tmp = ''
+        elif c is ',':
+            if subword:
+                subword += tmp + ', '
+                tmp = ''
+        else:
+            tmp += c
+
+    return subwords
 
 word = input('Enter a word: ')
 print('The subwords of "{:}" of height 1 are:\n    {:}'.
